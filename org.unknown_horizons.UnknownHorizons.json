@@ -44,7 +44,7 @@
                         {
                             "type": "git",
                             "url": "https://github.com/tintou/tinyxml.git",
-                            "branch": "master"
+                            "commit": "852527eb49a449599806d4671bb27a79fe0fbf16"
                         }
                     ]
                 },
@@ -87,7 +87,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/fifengine/fifengine.git",
-                    "branch": "master"
+                    "commit": "790e7cb31026053e096c4f16023dc521f1f70abc"
                 }
             ]
         },
@@ -207,7 +207,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/unknown-horizons/unknown-horizons.git",
-                    "branch": "master"
+                    "commit": "ce98ec499f95f0646d13d6dc1582103f979ad0a9"
                 }
             ]
         }

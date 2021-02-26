@@ -87,7 +87,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/fifengine/fifengine.git",
-                    "commit": "790e7cb31026053e096c4f16023dc521f1f70abc"
+                    "commit": "78c07b9ac4df03329bcaf052557b9c9450b18d3a"
                 }
             ]
         },
@@ -207,7 +207,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/unknown-horizons/unknown-horizons.git",
-                    "commit": "ce98ec499f95f0646d13d6dc1582103f979ad0a9"
+                    "commit": "7f6f613826aef9810999c1599c8354e8a78fbdb4"
                 }
             ]
         }

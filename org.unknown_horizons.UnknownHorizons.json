@@ -54,14 +54,14 @@
                     "name": "boost",
                     "buildsystem": "simple",
                     "build-commands": [
-                        "./bootstrap.sh --prefix=/app --with-libraries=context,date_time,filesystem,iostreams,locale,program_options,regex,system,thread,test",
+                        "./bootstrap.sh variant=release debug-symbols=on --prefix=${FLATPAK_DEST} --with-libraries=filesystem,system",
                         "./b2 -j $FLATPAK_BUILDER_N_JOBS install"
                     ],
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "http://sourceforge.net/projects/boost/files/boost/1.77.0/boost_1_77_0.tar.gz",
-                            "sha256": "5347464af5b14ac54bb945dc68f1dd7c56f0dad7262816b956138fc53bcc0131"
+                            "url": "http://sourceforge.net/projects/boost/files/boost/1.78.0/boost_1_78_0.tar.gz",
+                            "sha256": "94ced8b72956591c4775ae2207a9763d3600b30d9d7446562c552f0a14a63be7"
                         }
                     ]
                 },
@@ -86,8 +86,9 @@
             "sources": [
                 {
                     "type": "git",
+                    "buildsystem": "cmake-ninja",
                     "url": "https://github.com/fifengine/fifengine.git",
-                    "commit": "4b62c42e85bec19893cef8e63e6855927cff2c47"
+                    "commit": "f37c31c6cea74d50f1d635d876253a7b1f64630b"
                 }
             ]
         },
@@ -116,36 +117,36 @@
                 {
                     "type": "git",
                     "url": "https://github.com/iwalton3/tkinter-standalone",
-                    "commit": "2301112d142ebaf7532b25600c77d1a2edc9ef04"
+                    "commit": "d9cb97c5bd4f814c73678366e0e48220776b6ad3"
                 }
             ],
             "modules": [
                 {
-                    "name": "tcl",
+                    "name": "tcl8.6",
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://sourceforge.net/projects/tcl/files/Tcl/8.6.11/tcl8.6.11-src.tar.gz",
-                            "sha256": "8c0486668586672c5693d7d95817cb05a18c5ecca2f40e2836b9578064088258"
+                            "url": "https://prdownloads.sourceforge.net/tcl/tcl8.6.12-src.tar.gz",
+                            "sha256": "26c995dd0f167e48b11961d891ee555f680c175f7173ff8cb829f4ebcde4c1a6"
                         }
                     ],
                     "subdir": "unix",
                     "post-install": [
-                        "chmod +w /app/lib/libtcl8.6.so"
+                        "chmod +w ${FLATPAK_DEST}/lib/libtcl8.6.so"
                     ]
                 },
                 {
-                    "name": "tk",
+                    "name": "tk8.6",
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://sourceforge.net/projects/tcl/files/Tcl/8.6.11/tk8.6.11-src.tar.gz",
-                            "sha256": "5228a8187a7f70fa0791ef0f975270f068ba9557f57456f51eb02d9d4ea31282"
+                            "url": "https://prdownloads.sourceforge.net/tcl/tk8.6.12-src.tar.gz",
+                            "sha256": "12395c1f3fcb6bed2938689f797ea3cdf41ed5cb6c4766eec8ac949560310630"
                         }
                     ],
                     "subdir": "unix",
                     "post-install": [
-                        "chmod +w /app/lib/libtk8.6.so"
+                        "chmod +w ${FLATPAK_DEST}/lib/libtk8.6.so"
                     ]
                 }
             ]
@@ -168,7 +169,7 @@
             "name" : "PyYAML",
             "buildsystem" : "simple",
             "build-commands" : [
-                "python3 setup.py install --prefix=/app --root=/"
+                "python3 setup.py install --prefix=${FLATPAK_DEST} --root=/"
             ],
             "sources" : [
                 {
@@ -182,13 +183,13 @@
             "name" : "python3-lib2to3",
             "buildsystem": "simple",
             "build-commands": [
-                "cp -r Lib/lib2to3 /app/lib/python3.9/site-packages/"
+                "cp -r Lib/lib2to3 ${FLATPAK_DEST}/lib/python3.9/site-packages/"
             ],
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://www.python.org/ftp/python/3.9.7/Python-3.9.7.tgz",
-                    "sha256" : "a838d3f9360d157040142b715db34f0218e535333696a5569dc6f854604eb9d1"
+                    "url" : "https://www.python.org/ftp/python/3.9.9/Python-3.9.9.tgz",
+                    "sha256" : "2cc7b67c1f3f66c571acc42479cdf691d8ed6b47bee12c9b68430413a17a44ea"
                 }
             ]
         },
@@ -197,18 +198,18 @@
             "buildsystem": "simple",
             "build-commands": [
                 "python3 setup.py build_i18n",
-                "python3 setup.py install --prefix=/app",
-                "mkdir -p /app/share/icons/hicolor/scalable/apps/",
-                "install -m 644 -p content/gui/images/logos/uh_no_text.svg /app/share/icons/hicolor/scalable/apps/unknown-horizons.svg",
-                "mkdir -p /app/share/metainfo/",
-                "install -m 644 -p content/packages/unknown-horizons.appdata.xml /app/share/metainfo/",
-                "RELEASE_VERSION=\"2019.1+$(git rev-parse --short HEAD)\" && sed -i \"s/RELEASE_VERSION = get_git_version()/RELEASE_VERSION = \\\"$RELEASE_VERSION\\\"/\" /app/lib/python3.9/site-packages/horizons/constants.py"
+                "python3 setup.py install --prefix=${FLATPAK_DEST}",
+                "mkdir -p ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/",
+                "install -m 644 -p content/gui/images/logos/uh_no_text.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/unknown-horizons.svg",
+                "mkdir -p ${FLATPAK_DEST}/share/metainfo/",
+                "install -m 644 -p content/packages/unknown-horizons.appdata.xml ${FLATPAK_DEST}/share/metainfo/",
+                "RELEASE_VERSION=\"2019.1+$(git rev-parse --short HEAD)\" && sed -i \"s/RELEASE_VERSION = get_git_version()/RELEASE_VERSION = \\\"$RELEASE_VERSION\\\"/\" ${FLATPAK_DEST}/lib/python3.9/site-packages/horizons/constants.py"
             ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/unknown-horizons/unknown-horizons.git",
-                    "commit": "7397fb333006d26c3d9fe796c7bd9cb8c3b43a49"
+                    "commit": "c2f4d607b33cd3a7eb2bce46c567ce1f1d83ec59"
                 }
             ]
         }

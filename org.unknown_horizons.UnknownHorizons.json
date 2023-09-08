@@ -1,7 +1,7 @@
 {
     "app-id": "org.unknown_horizons.UnknownHorizons",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "21.08",
+    "runtime-version": "23.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "unknown-horizons",
     "rename-desktop-file": "unknown-horizons.desktop",
@@ -34,7 +34,7 @@
             "builddir": true,
             "config-opts": [
                 "-Dcegui=OFF",
-                "-DPYTHON_SITE_PACKAGES=${FLATPAK_DEST}/lib/python3.9/site-packages"
+                "-DPYTHON_SITE_PACKAGES=${FLATPAK_DEST}/lib/python3.11/site-packages"
             ],
             "modules": [
                 {
@@ -60,8 +60,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "http://sourceforge.net/projects/boost/files/boost/1.78.0/boost_1_78_0.tar.gz",
-                            "sha256": "94ced8b72956591c4775ae2207a9763d3600b30d9d7446562c552f0a14a63be7"
+                            "url": "https://boostorg.jfrog.io/artifactory/main/release/1.83.0/source/boost_1_83_0.tar.bz2",
+                            "sha256": "6478edfe2f3305127cffe8caf73ea0176c53769f4bf1585be237eb30798c3b8e"
                         }
                     ]
                 },
@@ -77,8 +77,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://sourceforge.net/projects/swig/files/swig/swig-4.0.2/swig-4.0.2.tar.gz",
-                            "sha256": "d53be9730d8d58a16bf0cbd1f8ac0c0c3e1090573168bfa151b01eb47fa906fc"
+                            "url": "https://sourceforge.net/projects/swig/files/swig/swig-4.1.1/swig-4.1.1.tar.gz",
+                            "sha256": "2af08aced8fcd65cdb5cc62426768914bedc735b1c250325203716f78e39ac9b"
                         }
                     ]
                 }
@@ -101,8 +101,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/b3/8d/a0a5c389d76f90c766e956515d34c3408a1e18f60fbaa08221d1f6b87490/distro-1.6.0-py2.py3-none-any.whl",
-                    "sha256": "c8713330ab31a034623a9515663ed87696700b55f04556b97c39cd261aa70dc7"
+                    "url": "https://files.pythonhosted.org/packages/f4/2c/c90a3adaf0ddb70afe193f5ebfb539612af57cffe677c3126be533df3098/distro-1.8.0-py3-none-any.whl",
+                    "sha256": "99522ca3e365cac527b44bde033f64c6945d90eb9f769703caaec52b09bbd3ff"
                 }
             ]
         },
@@ -117,7 +117,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/iwalton3/tkinter-standalone",
-                    "commit": "d9cb97c5bd4f814c73678366e0e48220776b6ad3"
+                    "commit": "20950173c51b7d4b67cfb5d765d41c2600f9bee3"
                 }
             ],
             "modules": [
@@ -126,8 +126,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://prdownloads.sourceforge.net/tcl/tcl8.6.12-src.tar.gz",
-                            "sha256": "26c995dd0f167e48b11961d891ee555f680c175f7173ff8cb829f4ebcde4c1a6"
+                            "url": "https://prdownloads.sourceforge.net/tcl/tcl8.6.13-src.tar.gz",
+                            "sha256": "43a1fae7412f61ff11de2cfd05d28cfc3a73762f354a417c62370a54e2caf066"
                         }
                     ],
                     "subdir": "unix",
@@ -140,8 +140,8 @@
                     "sources": [
                         {
                             "type": "archive",
-                            "url": "https://prdownloads.sourceforge.net/tcl/tk8.6.12-src.tar.gz",
-                            "sha256": "12395c1f3fcb6bed2938689f797ea3cdf41ed5cb6c4766eec8ac949560310630"
+                            "url": "https://prdownloads.sourceforge.net/tcl/tk8.6.13-src.tar.gz",
+                            "sha256": "2e65fa069a23365440a3c56c556b8673b5e32a283800d8d9b257e3f584ce0675"
                         }
                     ],
                     "subdir": "unix",
@@ -160,8 +160,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/45/0b/38b06fd9b92dc2b68d58b75f900e97884c45bedd2ff83203d933cf5851c9/future-0.18.2.tar.gz",
-                    "sha256": "b1bead90b70cf6ec3f0710ae53a525360fa360d306a86583adc6bf83a4db537d"
+                    "url": "https://files.pythonhosted.org/packages/8f/2e/cf6accf7415237d6faeeebdc7832023c90e0282aa16fd3263db0eb4715ec/future-0.18.3.tar.gz",
+                    "sha256": "34a17436ed1e96697a86f9de3d15a3b0be01d8bc8de9c1dffd59fb8234ed5307"
                 }
             ]
         },
@@ -174,8 +174,8 @@
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://files.pythonhosted.org/packages/a0/a4/d63f2d7597e1a4b55aa3b4d6c5b029991d3b824b5bd331af8d4ab1ed687d/PyYAML-5.4.1.tar.gz",
-                    "sha256" : "607774cbba28732bfa802b54baa7484215f530991055bb562efbed5b2f20a45e"
+                    "url" : "https://files.pythonhosted.org/packages/cd/e5/af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0/PyYAML-6.0.1.tar.gz",
+                    "sha256" : "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
                 }
             ]
         },
@@ -183,13 +183,13 @@
             "name" : "python3-lib2to3",
             "buildsystem": "simple",
             "build-commands": [
-                "cp -r Lib/lib2to3 ${FLATPAK_DEST}/lib/python3.9/site-packages/"
+                "cp -r Lib/lib2to3 ${FLATPAK_DEST}/lib/python3.11/site-packages/"
             ],
             "sources" : [
                 {
                     "type" : "archive",
-                    "url" : "https://www.python.org/ftp/python/3.9.9/Python-3.9.9.tgz",
-                    "sha256" : "2cc7b67c1f3f66c571acc42479cdf691d8ed6b47bee12c9b68430413a17a44ea"
+                    "url" : "https://www.python.org/ftp/python/3.11.5/Python-3.11.5.tgz",
+                    "sha256" : "a12a0a013a30b846c786c010f2c19dd36b7298d888f7c4bd1581d90ce18b5e58"
                 }
             ]
         },
@@ -203,13 +203,13 @@
                 "install -m 644 -p content/gui/images/logos/uh_no_text.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/unknown-horizons.svg",
                 "mkdir -p ${FLATPAK_DEST}/share/metainfo/",
                 "install -m 644 -p content/packages/unknown-horizons.appdata.xml ${FLATPAK_DEST}/share/metainfo/",
-                "RELEASE_VERSION=\"2019.1+$(git rev-parse --short HEAD)\" && sed -i \"s/RELEASE_VERSION = get_git_version()/RELEASE_VERSION = \\\"$RELEASE_VERSION\\\"/\" ${FLATPAK_DEST}/lib/python3.9/site-packages/horizons/constants.py"
+                "RELEASE_VERSION=\"2019.1+$(git rev-parse --short HEAD)\" && sed -i \"s/RELEASE_VERSION = get_git_version()/RELEASE_VERSION = \\\"$RELEASE_VERSION\\\"/\" ${FLATPAK_DEST}/lib/python3.11/site-packages/horizons/constants.py"
             ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/unknown-horizons/unknown-horizons.git",
-                    "commit": "c2f4d607b33cd3a7eb2bce46c567ce1f1d83ec59"
+                    "commit": "d106648463a391a86779b63a2e643ea8301f2683"
                 }
             ]
         }
